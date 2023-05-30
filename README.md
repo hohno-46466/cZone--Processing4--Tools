@@ -9,3 +9,7 @@
      2 directories, 3 files (Wed May 31 17:29:26 JST 2023)
 
 Collection of small sketeches which fits for the monogramming.
+
+Note:   url = https://github.com/hohno-46466/cZone--Processing4--Tools
+
+Note:   url = git@github.com:hohno-46466/cZone--Processing4--Tools.git
