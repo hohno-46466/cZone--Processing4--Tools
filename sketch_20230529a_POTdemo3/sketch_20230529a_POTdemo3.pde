@@ -1,5 +1,5 @@
 //
-// sketch_20230529a_POTdemo3
+// sketch_20230529a_POTdemo3.pde
 //
 
 // The first version: Fri May 26 18:49:38 JST 2023 by @hohno_at_kuimc
@@ -11,8 +11,8 @@ import mqtt.*;
 MQTTClient client;
 
 // MQTT information
-// final String MQTThost = "mqtt://broker.hivemq.com";
-final String MQTThost = "mqtt://localhost";
+final String MQTThost = "mqtt://broker.hivemq.com";
+//final String MQTThost = "mqtt://localhost";
 final String MQTTtopic = "hohno/POTdemo2";
 
 // Number of guages
@@ -27,7 +27,7 @@ final int screenHight = 300;    // ゲージを内包する長方形区画の高
 PFont font;
 
 // Colors
-final color colorBG    = color(200, 200, 200);  // 背景色
+final color colorBG    = color(200, 200, 200);  // 背景色：灰
 final color colorBlack = color(0, 0, 0);        // 色指定：黒
 final color colorWhite = color(255, 255, 255);  // 色指定：白
 final color colorRED   = color(255, 0, 0);      // 色指定：赤 
