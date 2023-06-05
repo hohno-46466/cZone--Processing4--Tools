@@ -12,32 +12,35 @@ MQTTClient client;
 
 // MQTT information
 final String MQTThost = "mqtt://broker.hivemq.com";
-//final String MQTThost = "mqtt://localhost";
-final String MQTTtopic = "hohno/POTdemo2";
+// final String MQTThost = "mqtt://localhost";
+final String MQTTtopic = "UCI2023/POTdemo2";
 
-// Number of guages
-final int Nguages = 3;          // ゲージの数
-final float overlapRate = 0.35; // ゲージ同士を近づけたい場合は，ゲージ同士の重なり具合を指定．0.0~0.5くらいの値がよい．ゲージを単に並べるだけなら 0.0 でよい．
+// Number of guages and overlap rate
+final int Nguages = 3;            // ゲージの数
+final float overlapRate = 0.35;   // ゲージ同士を近づけたい場合は，ゲージ同士の重なり具合を指定．0.0~0.5くらいの値がよい．ゲージを単に並べるだけなら 0.0 でよい．
+
+// Potentiometer value(s)
+float POTval[] = {0.0, 0.0, 0.0}; // 表示する値を格納．Nguages個の初期値が必要
 
 // Screen size
-final int screenWidth = 450;    // ゲージを内包する長方形区画の幅
-final int screenHight = 300;    // ゲージを内包する長方形区画の高さ
+final int screenWidth = 450;      // ゲージを内包する長方形区画の幅．実際のこのアプリの幅はこの値の Nguages 倍になるから「重なり分」を引いた値になる
+final int screenHight = 300;      // ゲージを内包する長方形区画の高さ
 
 // Font
 PFont font;
 
 // Colors
-final color colorBG    = color(200, 200, 200);  // 背景色：灰
-final color colorBlack = color(0, 0, 0);        // 色指定：黒
-final color colorWhite = color(255, 255, 255);  // 色指定：白
-final color colorRED   = color(255, 0, 0);      // 色指定：赤 
-final color colorGREEN = color(0, 255, 0);      // 色指定：緑
-final color colorBLUE  = color(0, 0, 255);      // 色指定：青
+final color colorBG    = color(200, 200, 200);    // 背景色：灰
+final color colorBlack = color(0, 0, 0);          // 色指定：黒
+final color colorWhite = color(255, 255, 255);    // 色指定：白
+final color colorRED   = color(255, 0, 0);        // 色指定：赤 
+final color colorGREEN = color(0, 255, 0);        // 色指定：緑
+final color colorBLUE  = color(0, 0, 255);        // 色指定：青
 
-// Design of the gage
-final int arcStart = (90 + 45);      // ゲージの開始角度（「3時」の位置を基準に時計回りの角度で指定）
-final int arcEnd   = (360 + 45);     // ゲージの終了角度
-final int arcSize  = arcEnd - arcStart;
+// Design of the guage
+final int arcStart = (90 + 45);                   // ゲージの開始角度（「3時」の位置を基準に時計回りの角度で指定）
+final int arcEnd   = (360 + 45);                  // ゲージの終了角度
+final int arcSize  = arcEnd - arcStart;           // ゲージを形作る円弧の角度
 
 final int centerX = int(screenWidth * 0.5);       // ゲージの中心位置（水平方向）
 final int centerY = int(screenHight * 0.5);       // ゲージの中心位置（垂直方向）
@@ -47,8 +50,7 @@ final int innerDiameter = int(screenHight * 0.4); // ゲージの内径
 final int textPosX = int(screenWidth * 0.5);      // テキスト表示位置の中心位置（水平方向）
 final int textPosY = int(screenHight * 0.8);      // テキスト表示位置の中心位置（垂直方向）
 
-// Potentiometer value(s)
-float POTval[] = {0.0, 0.0, 0.0};
+
 
 // -----------------------------------------------------------------------------
 
