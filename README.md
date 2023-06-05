@@ -9,9 +9,10 @@ Collection of small sketeches which fits for the monogramming.
          ├──  00doit.sh
          └──  sketch_20230529a_POTdemo3.pde
      
-     2 directories, 4 files (Fri Jun  2 13:54:06 JST 2023)
+     2 directories, 4 files (Tue Jun  6 06:56:23 JST 2023)
 
-    (Note: 00doit.sh above will not be stored in the GitHub repository)
+
+    (Note: The above 00doit.sh is for the author's internal use only and will not be stored in the GitHub repository)
 
 Note:   url = https://github.com/hohno-46466/cZone--Processing4--Tools
 Note:   url = git@github.com:hohno-46466/cZone--Processing4--Tools.git

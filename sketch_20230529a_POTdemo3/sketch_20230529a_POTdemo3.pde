@@ -3,31 +3,37 @@
 //
 
 // The first version: Fri May 26 18:49:38 JST 2023 by @hohno_at_kuimc
-// The latest version: Mon May 29 12:14:22 JST 2023 by @hohno_at_kuimc
+// The previous version: Mon May 29 12:14:22 JST 2023 by @hohno_at_kuimc
+// The latest version: Tue Jun  6 06:41:55 JST 2023 by @hohno_at_kuimc
 
 // -----------------------------------------------------------------------------
 
+// Prepare MQTT class object
 import mqtt.*;
 MQTTClient client;
 
-// MQTT information
+// Font
+PFont font;
+
+// MQTT host and topic
 final String MQTThost = "mqtt://broker.hivemq.com";
 // final String MQTThost = "mqtt://localhost";
 final String MQTTtopic = "UCI2023/POTdemo2";
 
-// Number of guages and overlap rate
+// Number of guages
 final int Nguages = 3;            // ゲージの数
-final float overlapRate = 0.35;   // ゲージ同士を近づけたい場合は，ゲージ同士の重なり具合を指定．0.0~0.5くらいの値がよい．ゲージを単に並べるだけなら 0.0 でよい．
 
 // Potentiometer value(s)
 float POTval[] = {0.0, 0.0, 0.0}; // 表示する値を格納．Nguages個の初期値が必要
+
+//  overlap rate
+final float overlapRate = 0.35;   // ゲージ同士の重なり具合を指定．0.0~0.5くらいの値がよい．単にゲージを並べるだけなら 0.0 でよい．
 
 // Screen size
 final int screenWidth = 450;      // ゲージを内包する長方形区画の幅．実際のこのアプリの幅はこの値の Nguages 倍になるから「重なり分」を引いた値になる
 final int screenHight = 300;      // ゲージを内包する長方形区画の高さ
 
-// Font
-PFont font;
+
 
 // Colors
 final color colorBG    = color(200, 200, 200);    // 背景色：灰
